@@ -23,14 +23,14 @@ export class LoginComponent implements OnInit {
 
   loginCustomer()
   {
+    let customerLocal: Customer;
     this.loginService.login('96363886104','24/06/1985')
       .subscribe(customer => {
         this.customerLogged = customer
-        console.log(this.customerLogged)
+        customerLocal = customer
         if (this.customerLogged !== undefined)
         {
-          console.log("navegou")
-          this.router.navigate(['invoice']);
+          this.router.navigateByUrl('invoice',{state: {customer: customerLocal}});
         }
       })
   }

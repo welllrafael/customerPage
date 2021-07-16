@@ -7,18 +7,22 @@ import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule } from '@po-ui/ng-templates';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { LoginComponent } from './login/login.component';
+import { BondsComponent } from './invoice/bonds/bonds.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     InvoiceComponent,
-    LoginComponent
+    LoginComponent,
+    BondsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PoModule,
-    PoTemplatesModule
+    PoTemplatesModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
