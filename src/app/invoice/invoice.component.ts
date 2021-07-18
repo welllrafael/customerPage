@@ -20,6 +20,9 @@ export class InvoiceComponent implements OnInit {
   bondsLoad: bonds | undefined;
   purchasesLoad: purchases | undefined;
 
+  showBonds: boolean = false;
+  showPurchases: boolean = false;
+
   bondsLoaded: Array<bond> | undefined = [];
   purchasesLoaded: Array<purchase> | undefined = [];
 
@@ -52,7 +55,8 @@ export class InvoiceComponent implements OnInit {
 
   getBonds()
   {
-    this.bondsLoaded = this.bondsLoad?.TitulosAreceber
+    this.showBonds = true;
+    this.showPurchases = false;
   }
 
   private loadBonds() {
@@ -61,12 +65,14 @@ export class InvoiceComponent implements OnInit {
         console.log('bond');
         console.log(bonds);
         this.bondsLoad = bonds;
+        this.bondsLoaded = this.bondsLoad?.TitulosAreceber
       });
   }
 
   getPurchases()
   {
-    this.purchasesLoaded = this.purchasesLoad?.Vendas
+    this.showBonds = false;
+    this.showPurchases = true;
   }
 
 
@@ -76,6 +82,7 @@ export class InvoiceComponent implements OnInit {
         console.log('purchases');
         console.log(purchases);
         this.purchasesLoad = purchases;
+        this.purchasesLoaded = purchases.Vendas;
       });
   }
 }

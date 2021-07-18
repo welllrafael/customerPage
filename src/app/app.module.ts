@@ -9,13 +9,15 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { LoginComponent } from './login/login.component';
 import { BondsComponent } from './invoice/bonds/bonds.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PurchasesComponent } from './invoice/purchases/purchases.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InvoiceComponent,
     LoginComponent,
-    BondsComponent
+    BondsComponent,
+    PurchasesComponent
   ],
   imports: [
     BrowserModule,

@@ -34,8 +34,11 @@
     </div>
     <div class="table-responsive">
       <div class="thf-margin">
-        <div class="po-md-6">
-          <app-bonds [purchases]="purchasesLoaded" [bonds]="bondsLoaded"></app-bonds>
+        <div class="po-md-6" *ngIf="showBonds">
+          <app-bonds [bonds]="bondsLoaded"></app-bonds>
+        </div>
+        <div class="po-md-6" *ngIf="showPurchases">
+          <app-purchases [purchases]="purchasesLoaded"></app-purchases>
         </div>
       </div>
     </div>
