@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { BondsComponent } from './invoice/bonds/bonds.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PurchasesComponent } from './invoice/purchases/purchases.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { PurchasesComponent } from './invoice/purchases/purchases.component';
     AppRoutingModule,
     PoModule,
     PoTemplatesModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

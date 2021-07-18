@@ -22,6 +22,7 @@ export class InvoiceComponent implements OnInit {
 
   showBonds: boolean = false;
   showPurchases: boolean = false;
+  disableAction: boolean = true;
 
   bondsLoaded: Array<bond> | undefined = [];
   purchasesLoaded: Array<purchase> | undefined = [];
@@ -45,6 +46,10 @@ export class InvoiceComponent implements OnInit {
         { from: 0, to: this.limiteUsado, label: `${this.limiteUsado.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) } Limite Usado`, color: '#c64840' },
         { from: this.limiteUsado, to: this.limiteTotal, label: `${this.limiteTotal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} Limite Total`, color: '#00b28e' }
       ];
+    }
+    else
+    {
+      this.router.navigateByUrl('');
     }
   }
 
@@ -83,6 +88,7 @@ export class InvoiceComponent implements OnInit {
         console.log(purchases);
         this.purchasesLoad = purchases;
         this.purchasesLoaded = purchases.Vendas;
+        this.disableAction = false;
       });
   }
 }
